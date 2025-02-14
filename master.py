@@ -19,4 +19,3 @@ lora.write(command.encode() + b'\n')
 
 print(lora.readline().decode('ascii').rstrip())
 
-# :)
