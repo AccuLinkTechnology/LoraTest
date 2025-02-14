@@ -6,16 +6,20 @@ from serial import Serial
 
 # lora = Serial(port=f"/dev/ttyUSB{usb_num}")
 
-port = "/dev/ttyUSB2"
+port = "/dev/ttyUSB0"
 baud_rate = 19600
 lora = Serial(port, baud_rate)
+
+def send_command(command):
+    lora.write(command.encode() + b'\n')
+
 # ===========   ===========   ===========   ===========   ===========
 
-command = "ER_CMD#B?"
-lora.write(command.encode() + b'\n')
 
-# ACK = "ACK"
-# lora.write(ACK.encode())
+#send_command("ER_CMD#T8")
+#print(lora.readline().decode('ascii').rstrip())
 
-print(lora.readline().decode('ascii').rstrip())
+#send_command("ACK")
+#print(lora.readline().decode('ascii').rstrip())
 
+send_command("Cheese")
