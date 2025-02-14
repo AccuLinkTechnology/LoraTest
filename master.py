@@ -18,3 +18,5 @@ lora.write(command.encode() + b'\n')
 # lora.write(ACK.encode())
 
 print(lora.readline().decode('ascii').rstrip())
+
+# :)
