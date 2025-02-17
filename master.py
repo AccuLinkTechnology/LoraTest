@@ -8,18 +8,18 @@ from serial import Serial
 
 port = "/dev/ttyUSB0"
 baud_rate = 19600
-lora = Serial(port, baud_rate)
+lora = Serial(port, baud_rate, timeout=1)
 
 def send_command(command):
-    lora.write(command.encode() + b'\n')
+    lora.write(command.encode())
 
 # ===========   ===========   ===========   ===========   ===========
 
+send_command("Hello there")
 
 #send_command("ER_CMD#T8")
-#print(lora.readline().decode('ascii').rstrip())
+#print(lora.readline())
 
 #send_command("ACK")
-#print(lora.readline().decode('ascii').rstrip())
+#print(lora.readline())
 
-send_command("Cheese")
