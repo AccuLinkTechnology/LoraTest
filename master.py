@@ -14,8 +14,9 @@ def send_command(command):
     lora.write(command.encode())
     
 # ===========   ===========   ===========   ===========   ===========
+print("Transmitting..")
 while True:
-    send_command("\n")
+    send_command("Hello there\n")
     time.sleep(3)
 
 #send_command("ER_CMD#T8")
